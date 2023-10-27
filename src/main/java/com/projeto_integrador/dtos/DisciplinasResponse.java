@@ -6,4 +6,5 @@ public record DisciplinasResponse(
     String descricao,
     String duracaoSemestre) {
 
+        
 }
