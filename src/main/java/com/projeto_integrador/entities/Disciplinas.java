@@ -1,15 +1,12 @@
 package com.projeto_integrador.entities;
 
-public class Disciplinas {
-   
-
-    public class Diciplinas {
+    public class Disciplinas {
         private int id;
         private String nome;
         private String descricao;
         private int duracaoSemestres;
     
-        public Diciplinas(int id, String nome, String descricao, int duracaoSemestres) {
+        public Disciplinas(int id, String nome, String descricao, int duracaoSemestres) {
             this.id = id;
             this.nome = nome;
             this.descricao = descricao;
@@ -53,4 +50,4 @@ public class Disciplinas {
     
 
 
-}
+

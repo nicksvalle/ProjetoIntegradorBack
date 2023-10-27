@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 public record DisciplinasRequest(
    
     @NotBlank(message = "Nome não pode ser em branco")
-    String name,
+    String nome,
 
     @NotBlank(message = "Descricao não pode ser em branco")
     String descricao,
