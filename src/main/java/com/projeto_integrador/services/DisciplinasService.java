@@ -23,7 +23,7 @@ public class DisciplinasService {
 
     public Disciplinas getDisciplina(long id){
         return this.repository.findById(id).orElseThrow(
-                                                () -> new EntityNotFoundException("Disciplinas not found")
+                                                () -> new EntityNotFoundException("Disciplinas Nao Encontrada")
 
                                                 
                                             );

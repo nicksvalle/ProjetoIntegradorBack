@@ -22,7 +22,7 @@ public class ProfessorService {
 
     public Professor getProfessores(long id){
         return this.repository.findById(id).orElseThrow(
-                                                () -> new EntityNotFoundException("Professor not found")
+                                                () -> new EntityNotFoundException("Professor Nao Encontrado")
 
                                                 
                                             );
