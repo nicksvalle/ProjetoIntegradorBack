@@ -2,7 +2,7 @@ package com.projeto_integrador.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record DisciplinasRequest(
+public record CursoRequest(
    
     @NotBlank(message = "Nome não pode ser em branco")
     String nome,
@@ -11,7 +11,7 @@ public record DisciplinasRequest(
     String descricao,
 
     @NotBlank(message = "Duração do Semestre não pode ser em branco")
-    String duracaoSemestre
+    String Semestre
 ) {
     
 }

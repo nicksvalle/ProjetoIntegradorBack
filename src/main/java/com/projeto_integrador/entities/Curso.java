@@ -10,21 +10,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="TBl_Disciplinas")
-public class Disciplinas implements Serializable {
+@Table(name ="TBl_Cursos")
+public class Curso implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1024, nullable = false, name = "Disciplina_nome")
-    private String nome;
+    @Column(length = 1024, nullable = false, name = "Curso_name")
+    private String name;
 
-    @Column(length = 1024, nullable = false, name = "Disciplina_descricao")
+    @Column(length = 1024, nullable = false, name = "Curso_descricao")
     private String descricao;
 
-    @Column(length = 1024, nullable = false, name = "Diciplina_duracaoSemestre")
-    private String duracaoSemestres;
+    @Column(length = 1024, nullable = false, name = "Curso_Semestre")
+    private String Semestre;
 
     
         // Getters e Setters
@@ -37,12 +37,12 @@ public class Disciplinas implements Serializable {
             this.id = id;
         }
     
-        public String getNome() {
-            return nome;
+        public String getName() {
+            return name;
         }
     
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setName(String name) {
+            this.name = name;
         }
     
         public String getDescricao() {
@@ -53,12 +53,12 @@ public class Disciplinas implements Serializable {
             this.descricao = descricao;
         }
     
-        public String getDuracaoSemestres() {
-            return duracaoSemestres;
+        public String getSemestre() {
+            return Semestre;
         }
     
-        public void setDuracaoSemestres(String duracaoSemestres) {
-            this.duracaoSemestres = duracaoSemestres;
+        public void setSemestre(String Semestre) {
+            this.Semestre = Semestre;
         }
 
         @Override
@@ -76,7 +76,7 @@ public class Disciplinas implements Serializable {
                 return false;
             if (getClass() != obj.getClass())
                 return false;
-            Disciplinas other = (Disciplinas) obj;
+            Curso other = (Curso) obj;
             if (id != other.id)
                 return false;
             return true;

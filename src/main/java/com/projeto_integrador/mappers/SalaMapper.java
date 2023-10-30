@@ -13,7 +13,7 @@ public class SalaMapper {
     public static SalaResponse toDTO(Sala sala) {
         return new SalaResponse(
             sala.getId(),
-            sala.getNome(),
+            sala.getNumero(),
             sala.getCapacidade(),
             sala.getDescricao()
         );

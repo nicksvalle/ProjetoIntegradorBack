@@ -10,18 +10,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="TBl_Professor")
+@Table(name ="TBl_PROFESSOR")
 public class Professor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1024, nullable = false, name = "Professor_nome")
-    private String nome;
+    @Column(length = 1024, nullable = false, name = "Professor_name")
+    private String name;
 
     @Column(length = 1024, nullable = false, name = "Professor_email")
     private String email;
+
+    @Column(length = 1024, nullable = false, name = "Professor_course")
+    private String course;
+
+    @Column(length = 1024, nullable = false, name = "Professor_date")
+    private String date;
+
+    @Column(length = 1024, nullable = false, name = "Professor_materia")
+    private String materia;
 
         // Getters e Setters
     
@@ -33,12 +42,12 @@ public class Professor implements Serializable {
             this.id = id;
         }
     
-        public String getNome() {
-            return nome;
+        public String getName() {
+            return name;
         }
     
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setName(String name) {
+            this.name = name;
         }
     
         public String getEmail() {
@@ -48,6 +57,31 @@ public class Professor implements Serializable {
         public void setEmail(String email) {
             this.email = email;
         }
+
+        public String getCourse() {
+            return course;
+        }
+    
+        public void setCourse(String course) {
+            this.course = course;
+        }
+
+        public String getDate() {
+            return date;
+        }
+    
+        public void setDate(String date) {
+            this.date = date;
+        }
+        
+        public String getMateria() {
+            return materia;
+        }
+    
+        public void setMateria(String materia) {
+            this.materia = materia;
+        }
+
 
         @Override
         public int hashCode() {

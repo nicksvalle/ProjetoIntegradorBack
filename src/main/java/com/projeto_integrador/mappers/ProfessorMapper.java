@@ -12,8 +12,11 @@ public class ProfessorMapper {
     public static ProfessorResponse toDTO(Professor professor) {
         return new ProfessorResponse(
             professor.getId(),
-            professor.getNome(),
-            professor.getEmail()
+            professor.getName(),
+            professor.getEmail(),
+            professor.getCourse(),
+            professor.getDate(),
+            professor.getMateria()
         );
     }
 

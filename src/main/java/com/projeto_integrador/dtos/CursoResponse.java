@@ -1,10 +1,10 @@
 package com.projeto_integrador.dtos;
 
-public record DisciplinasResponse(
+public record CursoResponse(
     Long id,
-    String nome,
+    String name,
     String descricao,
-    String duracaoSemestre) {
+    String Semestre) {
 
         
 }

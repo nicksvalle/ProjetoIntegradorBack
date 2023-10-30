@@ -3,7 +3,7 @@ package com.projeto_integrador.dtos;
 public record SalaResponse (
     
     Long id,
-    String nome,
+    String numero,
     String capacidade,
     String descricao
 ) {

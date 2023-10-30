@@ -17,8 +17,8 @@ public class Sala implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1024, nullable = false, name = "Sala_nome")
-    private String nome;
+    @Column(length = 1024, nullable = false, name = "Sala_numero")
+    private String numero;
 
     @Column(length = 1024, nullable = false, name = "Sala_capacidade")
     private String capacidade ;
@@ -36,12 +36,12 @@ public class Sala implements Serializable {
             this.id = id;
         }
     
-        public String getNome() {
-            return nome;
+        public String getNumero() {
+            return numero;
         }
     
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setNumero(String numero) {
+            this.numero = numero;
         }
     
         public String getCapacidade() {
