@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="TBl_PROFESSOR")
+@Table(name ="TBL_PROFESSOR")
 public class Professor implements Serializable {
 
     @Id
