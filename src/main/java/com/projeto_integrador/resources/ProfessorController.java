@@ -26,6 +26,7 @@ import com.projeto_integrador.services.ProfessorService;
 @RestController
 @RequestMapping("professores")
 @CrossOrigin
+
 public class ProfessorController { 
     @Autowired
     private ProfessorService service;
