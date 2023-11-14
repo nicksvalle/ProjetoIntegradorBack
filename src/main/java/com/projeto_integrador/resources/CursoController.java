@@ -39,7 +39,6 @@ public class CursoController {
 }
 
 
-
     @GetMapping("{id}")
     public ResponseEntity<CursoResponse>getCursos(@PathVariable long id){
         var cursos = this.service.getCurso(id);
