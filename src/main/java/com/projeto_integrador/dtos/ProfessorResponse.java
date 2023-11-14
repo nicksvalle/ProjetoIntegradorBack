@@ -1,12 +1,14 @@
 package com.projeto_integrador.dtos;
 
+import java.util.List;
+
 public record ProfessorResponse (
     Long id,
     String name,
     String email,
-    String course,
+    List<String> course,
     String date,
-    String materia
+    List<String> materia
 ) {
 
 }

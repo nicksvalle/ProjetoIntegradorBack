@@ -1,6 +1,7 @@
 package com.projeto_integrador.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,13 +25,13 @@ public class Professor implements Serializable {
     private String email;
 
     @Column(length = 1024, nullable = false, name = "Professor_course")
-    private String course;
+    private List<String> course;
 
     @Column(length = 1024, nullable = false, name = "Professor_date")
     private String date;
 
     @Column(length = 1024, nullable = false, name = "Professor_materia")
-    private String materia;
+    private List<String> materia;
 
         // Getters e Setters
     
@@ -58,11 +59,11 @@ public class Professor implements Serializable {
             this.email = email;
         }
 
-        public String getCourse() {
+        public List<String> getCourse() {
             return course;
         }
     
-        public void setCourse(String course) {
+        public void setCourse(List<String> course) {
             this.course = course;
         }
 
@@ -74,11 +75,11 @@ public class Professor implements Serializable {
             this.date = date;
         }
         
-        public String getMateria() {
+        public List<String> getMateria() {
             return materia;
         }
     
-        public void setMateria(String materia) {
+        public void setMateria(List<String> materia) {
             this.materia = materia;
         }
 

@@ -1,6 +1,9 @@
 package com.projeto_integrador.dtos;
 
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 public record ProfessorRequest (
 
@@ -10,14 +13,14 @@ public record ProfessorRequest (
     @NotBlank(message = "Email não pode ser em branco")
     String email,
 
-    @NotBlank(message = "Curso não pode ser em branco")
-    String course,
+    @NotEmpty(message = "Curso não pode ser em branco")
+    List<String> course,
 
     @NotBlank(message = "Data não pode ser em branco")
     String date,
 
-    @NotBlank(message = "Materia não pode ser em branco")
-    String materia
+    @NotEmpty(message = "Materia não pode ser em branco")
+    List<String> materia
 
 ){
 
