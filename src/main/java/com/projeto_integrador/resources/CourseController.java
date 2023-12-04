@@ -17,37 +17,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.projeto_integrador.dtos.CursoRequest;
-import com.projeto_integrador.dtos.CursoResponse;
-import com.projeto_integrador.entities.Curso;
-import com.projeto_integrador.mappers.CursoMapper;
-import com.projeto_integrador.services.CursoService;
+import com.projeto_integrador.dtos.CourseRequest;
+import com.projeto_integrador.dtos.CourseResponse;
+import com.projeto_integrador.entities.Course;
+import com.projeto_integrador.mappers.CourseMapper;
+import com.projeto_integrador.services.CourseService;
 
 
 @RestController
-@RequestMapping("cursos")
+@RequestMapping("course")
 @CrossOrigin
 
-public class CursoController {
+public class CourseController {
     @Autowired
-    private CursoService service;
+    private CourseService service;
 
     @GetMapping
-    public ResponseEntity<List<CursoResponse>> getCurso() {
-    var curso = this.service.getCursos();
-    return ResponseEntity.ok(CursoMapper.toDTOList(curso));
+    public ResponseEntity<List<CourseResponse>> getCourse() {
+    var course = this.service.getCourses();
+    return ResponseEntity.ok(CourseMapper.toDTOList(course));
 }
 
 
     @GetMapping("{id}")
-    public ResponseEntity<CursoResponse>getCursos(@PathVariable long id){
-        var cursos = this.service.getCurso(id);
-        return ResponseEntity.ok(CursoMapper.toDTO(cursos));
+    public ResponseEntity<CourseResponse>getCourses(@PathVariable long id){
+        var courses = this.service.getCourse(id);
+        return ResponseEntity.ok(CourseMapper.toDTO(courses));
     }
 
     @PostMapping
-    public ResponseEntity<CursoResponse> save(@Validated @RequestBody CursoRequest cursos){
-        var savedCursos = this.service.save(cursos);
+    public ResponseEntity<CourseResponse> save(@Validated @RequestBody CourseRequest courses){
+        var savedCourses = this.service.save(courses);
 
         URI location = ServletUriComponentsBuilder
 
@@ -55,26 +55,26 @@ public class CursoController {
 
                 .path("/{id}")
 
-                .buildAndExpand(savedCursos.id())
+                .buildAndExpand(savedCourses.id())
 
                 .toUri();
                 
-        return ResponseEntity.created(location).body(savedCursos);
+        return ResponseEntity.created(location).body(savedCourses);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteCursos(@PathVariable long id){
-        this.service.deleteCursosById(id);
+    public ResponseEntity<Void> deleteCourses(@PathVariable long id){
+        this.service.deleteCoursesById(id);
         return ResponseEntity.noContent().build();
     }
     
     
     @PutMapping("{id}")
-    public ResponseEntity<Void> update(@Validated @RequestBody Curso curso,
+    public ResponseEntity<Void> update(@Validated @RequestBody Course course,
                                    @PathVariable long id
     ){
    
-    this.service.update(id, curso);
+    this.service.update(id, course);
     return ResponseEntity.ok().build();
     }
 

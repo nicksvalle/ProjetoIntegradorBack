@@ -1,4 +1,4 @@
-package com.projeto_integrador.resources.exceptions;
+package com.projeto_integrador.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
