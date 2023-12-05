@@ -11,27 +11,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="TBL_PROFESSOR")
-public class Professor implements Serializable {
+@Table(name ="teacher")
+public class Teacher implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1024, nullable = false, name = "Professor_name")
+    @Column(length = 1024, nullable = false, name = "name")
     private String name;
 
-    @Column(length = 1024, nullable = false, name = "Professor_email")
+    @Column(length = 1024, nullable = false, name = "email")
     private String email;
 
-    @Column(length = 1024, nullable = false, name = "Professor_course")
+    @Column(length = 1024, nullable = false, name = "course")
     private List<String> course;
 
-    @Column(length = 1024, nullable = false, name = "Professor_date")
+    @Column(length = 1024, nullable = false, name = "date")
     private String date;
 
-    @Column(length = 1024, nullable = false, name = "Professor_materia")
-    private List<String> materia;
+    @Column(length = 1024, nullable = false, name = "discipline")
+    private List<String> discipline;
 
         // Getters e Setters
     
@@ -75,12 +75,12 @@ public class Professor implements Serializable {
             this.date = date;
         }
         
-        public List<String> getMateria() {
-            return materia;
+        public List<String> getDiscipline() {
+            return discipline;
         }
     
-        public void setMateria(List<String> materia) {
-            this.materia = materia;
+        public void setDiscipline(List<String> discipline) {
+            this.discipline = discipline;
         }
 
 
@@ -99,7 +99,7 @@ public class Professor implements Serializable {
                 return false;
             if (getClass() != obj.getClass())
                 return false;
-            Professor other = (Professor) obj;
+            Teacher other = (Teacher) obj;
             if (id != other.id)
                 return false;
             return true;

@@ -5,7 +5,7 @@ import java.util.List;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
-public record ProfessorRequest (
+public record TeacherRequest (
 
     @NotBlank(message = "Nome não pode ser em branco")
     String name,
@@ -20,7 +20,7 @@ public record ProfessorRequest (
     String date,
 
     @NotEmpty(message = "Materia não pode ser em branco")
-    List<String> materia
+    List<String> discipline
 
 ){
 

@@ -17,37 +17,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.projeto_integrador.entities.Professor;
-import com.projeto_integrador.dtos.ProfessorRequest;
-import com.projeto_integrador.dtos.ProfessorResponse;
-import com.projeto_integrador.mappers.ProfessorMapper;
-import com.projeto_integrador.services.ProfessorService;
+import com.projeto_integrador.entities.Teacher;
+import com.projeto_integrador.dtos.TeacherRequest;
+import com.projeto_integrador.dtos.TeacherResponse;
+import com.projeto_integrador.mappers.TeacherMapper;
+import com.projeto_integrador.services.TeacherService;
 
 @RestController
-@RequestMapping("professores")
+@RequestMapping("teachers")
 @CrossOrigin
 
-public class ProfessorController { 
+public class TeacherController { 
     @Autowired
-    private ProfessorService service;
+    private TeacherService service;
 
     @GetMapping
-    public ResponseEntity<List<ProfessorResponse>> getProfessor() {
-    var professor = this.service.getProfessores();
-    return ResponseEntity.ok(ProfessorMapper.toDTOList(professor));
+    public ResponseEntity<List<TeacherResponse>> getTeacher() {
+    var professor = this.service.getTeachers();
+    return ResponseEntity.ok(TeacherMapper.toDTOList(professor));
 }
 
 
 
     @GetMapping("{id}")
-    public ResponseEntity<ProfessorResponse>getProfessores(@PathVariable long id){
-        var professores = this.service.getProfessor(id);
-        return ResponseEntity.ok(ProfessorMapper.toDTO(professores));
+    public ResponseEntity<TeacherResponse>getTeachers(@PathVariable long id){
+        var teachers = this.service.getTeacher(id);
+        return ResponseEntity.ok(TeacherMapper.toDTO(teachers));
     }
     
     @PostMapping
-    public ResponseEntity<ProfessorResponse> save(@Validated @RequestBody ProfessorRequest professores){
-        var savedProfessores = this.service.save(professores);
+    public ResponseEntity<TeacherResponse> save(@Validated @RequestBody TeacherRequest teachers){
+        var savedTeachers = this.service.save(teachers);
 
         URI location = ServletUriComponentsBuilder
 
@@ -55,25 +55,25 @@ public class ProfessorController {
 
                 .path("/{id}")
 
-                .buildAndExpand(savedProfessores.id())
+                .buildAndExpand(savedTeachers.id())
 
                 .toUri();
                 
-        return ResponseEntity.created(location).body(savedProfessores);
+        return ResponseEntity.created(location).body(savedTeachers);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteProfessores(@PathVariable long id){
-        this.service.deleteProfessoresById(id);
+    public ResponseEntity<Void> deleteTeachers(@PathVariable long id){
+        this.service.deleteTeachersById(id);
         return ResponseEntity.noContent().build();
     }
     
     @PutMapping("{id}")
-    public ResponseEntity<Void> update(@Validated @RequestBody Professor professor,
+    public ResponseEntity<Void> update(@Validated @RequestBody Teacher teacher,
                                    @PathVariable long id
     ){
    
-        this.service.update(id, professor);
+        this.service.update(id, teacher);
         return ResponseEntity.ok().build();
     }
 
