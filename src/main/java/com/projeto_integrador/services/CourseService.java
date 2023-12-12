@@ -55,7 +55,6 @@ public class CourseService {
             updateCourses.setTitle(course.getTitle());
             updateCourses.setDiscipline(course.getDiscipline());
             updateCourses.setCourse(course.getCourse());
-            updateCourses.setTeacher(course.getTeacher());
             updateCourses.setPeriod(course.getPeriod());
     
             this.repository.save(updateCourses);

@@ -25,7 +25,7 @@ import com.projeto_integrador.services.CourseService;
 
 
 @RestController
-@RequestMapping("course")
+@RequestMapping("courses")
 @CrossOrigin
 
 public class CourseController {

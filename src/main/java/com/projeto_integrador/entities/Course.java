@@ -1,7 +1,6 @@
 package com.projeto_integrador.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,9 +28,6 @@ public class Course implements Serializable {
 
     @Column(length = 1024, nullable = false, name = "acronym")
     private String acronym;
-
-    @Column(length = 1024, nullable = false, name = "teacher")
-    private List<String> teacher;
 
     @Column(length = 1024, nullable = false, name = "periodo")
     private String period;
@@ -67,14 +63,6 @@ public class Course implements Serializable {
     
         public void setCourse(String course) {
             this.course = course;
-        }
-
-        public List<String> getTeacher() {
-            return teacher;
-        }
-
-        public void setTeacher(List<String> teacher) {
-            this.teacher = teacher;
         }
 
         public String getPeriod() {

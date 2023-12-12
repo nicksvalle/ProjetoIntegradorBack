@@ -16,7 +16,6 @@ import com.projeto_integrador.entities.Course;
             course.setDiscipline(request.discipline());
             course.setCourse(request.course());
             course.setAcronym(request.acronym());
-            course.setTeacher(request.teacher());
             course.setPeriod(request.period());
             return course;
         }
@@ -28,7 +27,6 @@ import com.projeto_integrador.entities.Course;
             course.getDiscipline(),
             course.getCourse(),
             course.getAcronym(),
-            course.getTeacher(),
             course.getPeriod()
         );
     }
